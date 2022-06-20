@@ -1,0 +1,100 @@
+<hello name="{{ name }}"></hello>
+<div class="container">
+  <div class="row">
+    <div *ngIf="isDataAvailable">
+    <form [formGroup]="questiononeForm" (ngSubmit)="onSubmit()">
+        <div class="flex-row align-center flex-wrap flwidth ques-block" >
+          <div class="flex-wrap flwidth flex-row">
+            <div></div>
+            <div class="ng-star-inserted flwidth" *ngFor="let question of QuestionOne;index as i">
+              <section class="calc-ques-box flwidth ng-star-inserted form-group">
+                <mat-list class="mat-list mat-list-base" role="list">
+                  <!---->
+                  <mat-list-item class="flex-1 calc-ques-list flex-row marB30web-16mob "
+                    role="listitem">
+                    
+                      <h4 class="font-header-4 flwidth marB4">{{question.text}}</h4>
+                      <br />
+                      <span class="font-body-2 flwidth marB16 padL8">{{question.displaytext}}</span>
+                      <br />
+                      <!---->
+                      <div class="calc-options flex-wrap flex-row flwidth ">
+                        <!---->
+                        <mat-radio-group class="flwidth flex-row flex-wrap outer-group " formControlName={{question.controlName}} id={{question.controlName}}
+                          role="radiogroup" value="outerGroup"
+                           [ngClass]="{ 'is-invalid': submitted && getQuestionFormGroup(i).errors != null }">
+                          <!---->
+                          <div class="flwidth-mob ng-star-inserted" *ngFor="let questionopt of question.pvr;index as j">
+                            <!---->
+                            <!---->
+                            <div class="flex-row flex-wrap calc-select-btn ng-star-inserted">
+                              <mat-radio-button
+                                class="flex-row base-bg justify-space-bw mar8 mar0-mob 
+                                flwidth calc-option calc-opt-border calc-box200 font-body-2 mat-radio-button line1 mat-primary"
+                                color="primary" tabindex="{{i*2}}" id="mat-radio-{{j}}{{i*2}}" 
+                                
+                                value="{{questionopt.caption}}">
+                                <label class="mat-radio-label"
+                                  for="mat-radio-{{j}}{{i*2}}-input">
+                                  <div class="mat-radio-container">
+                                    <input class="mat-radio-input cdk-visually-hidden" type="radio"
+                                      id="mat-radio-{{j}}{{i*2}}-input" tabindex="{{i*2 + 1}}" name="mat-radio-group-10">
+                                  </div>
+                                  <div class="mat-radio-label-content">
+                                    <span style="display:none">&nbsp;</span> {{questionopt.caption}}
+                                  </div>
+                                </label>
+                              </mat-radio-button>
+                              <!---->
+                            </div>
+                           
+                          </div>
+                         
+                        </mat-radio-group>
+                        <!---->
+                        <div class="ng-star-inserted">
+                          <!---->
+                          
+                          <div class="ng-star-inserted">
+                            <!---->
+                            <div class="calc-group-callout ng-star-inserted">
+                              <!---->
+                            <mat-error>
+                              <div *ngIf="submitted && getQuestionFormGroup(i).errors != null" >
+                                  <div *ngIf="getQuestionFormGroup(i).errors.required">{{question.validationMsg}}</div>
+                              </div>
+                            </mat-error>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    
+                  </mat-list-item>
+                </mat-list>
+              </section>
+            </div>
+          </div>
+          <div class="flwidth flex-row align-center proceed-btn-row mob-btn-fixed ng-star-inserted">
+
+        <button class="font-caption-1 nxt-step-cta mat-flat-button mat-primary button-theme" color="primary"
+          mat-flat-button="" id="coolbuttonquestionone" type="submit" >
+          <span class="mat-button-wrapper">CONTINUE </span>
+          <div class="mat-button-ripple mat-ripple" matripple=""></div>
+          <div class="mat-button-focus-overlay"></div>
+        </button></div>
+        </div>
+    </form>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <h4> Selection Answers</h4>
+    <span > display text with question anstextheader and option message </span>
+  </div>
+  <div class="row">
+    <div *ngIf="submitted"> 
+      <h2> Form Submitted Successfully</h2>
+    </div>
+  </div> 
+</div>

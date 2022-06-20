@@ -1,0 +1,59 @@
+p {
+  font-family: Lato;
+}
+.flwidth-mob{
+  width:100%;
+}
+.flwidth
+{
+   width:100% !important;
+}
+.marB8 {
+    margin-bottom: 8px;
+}
+.marT8 {
+    margin-top: 8px;
+}
+.pad16 {
+    padding: 16px;
+}
+.calc-ques-list {
+    height: auto !important;
+    width: auto !important;
+}
+.font-header-4 {
+    font-size: 1.125rem !important;
+    font-weight: 500 !important;
+}
+.marB4 {
+    margin-bottom: 4px;
+}
+.flex-column {
+    display: flex !important;
+    flex-direction: column;
+}
+.justify-center {
+    justify-content: center;
+}
+.flex-1{
+  flex:1;
+}
+section {
+    display: block;
+}
+.form-group {
+    margin-bottom: 1rem;
+}
+.flex-wrap {
+    flex-wrap: wrap;
+}
+.font-body-2 {
+    font-size: .875rem !important;
+    font-weight: 400 !important;
+}
+.marB16{
+    margin-bottom: 16px;
+}
+.padL8 {
+    padding-left: 8px;
+}
